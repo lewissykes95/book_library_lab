@@ -1,3 +1,12 @@
 {% extends 'base.html' %}{% block content %}
-    It Works!
+    <ul>
+        {% for book in all_books %}
+            <li>
+                Title: {{book.title}}
+                Genre: {{book.genre}}
+                Fiction: {{book.fiction}}
+                Author: {{book.author.first_name}} {{book.author.last_name}}
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock content %}

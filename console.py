@@ -5,6 +5,9 @@ from models.author import Author
 import repositories.book_repository as book_repo
 import repositories.author_repository as author_repo
 
+book_repo.delete_all()
+author_repo.delete_all()
+
 author1 = Author('Roald', 'Dahl')
 author2 = Author('Charles', 'Dickens')
 author3 = Author('Charlotte', 'Bronte')
@@ -22,3 +25,13 @@ book_repo.save(book1)
 book_repo.save(book2)
 book_repo.save(book3)
 book_repo.save(book4)
+
+book_repo.delete(book2.id)
+
+authors = author_repo.select_all()
+books = book_repo.select_all()
+
+for author in authors:
+    print(author.__dict__)
+for book in books:
+    print(book.__dict__)
