@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+    <form action="/books" method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title">
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre">
+        <label for="fiction">Fiction or Non-Fiction?</label>
+        <select name="fiction" id="fiction">
+            <option value="true">Fiction</option>
+            <option value="false">Non-Fiction</option>
+        </select>
+        <label for="author">Author:</label>
+        <select name="author_id" id="author">
+            {% for author in all_authors %}
+                <option value="{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add Book">
+    </form>
+{% endblock content %}
