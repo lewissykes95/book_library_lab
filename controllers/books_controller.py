@@ -25,3 +25,8 @@ def create():
     book = Book(title, genre, fiction, author)
     book_repo.save(book)
     return redirect('/books')
+
+@books_blueprint.route('/books/<id>')
+def show(id):
+    book = book_repo.select(id)
+    return render_template('books/show.html', book=book)

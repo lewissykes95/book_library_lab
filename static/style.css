@@ -1,0 +1,24 @@
+body {
+    background-color: grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.card-cont {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.card {
+    display: flex;
+    border: 2px black solid;
+    background-color: white;
+    padding-right: 20px;
+    padding-left: -10px;
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
